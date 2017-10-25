@@ -1,5 +1,5 @@
 function doGet(e) {
-  if (e.parameters.url != undefined && e.parameters.url != "") {
+  if (e.parameters.url) {
     var blob = UrlFetchApp.fetch(e.parameters.url).getBlob();
     var text = getText(blob);
     return ContentService.createTextOutput(text);
